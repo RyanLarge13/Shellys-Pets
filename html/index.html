@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Your local Buffalo, NY pet groomer and care taker with the most competitive pricing and customer service in the metro area"
+    />
+    <link rel="stylesheet" href="../css/custom.css" />
+    <link rel="manifest" href="/public/manifest.json" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <script src="../js/script.js" type="module"></script>
+    <script
+      src="https://kit.fontawesome.com/a673862905.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Using tailwind css for this project -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Buffalo Groomers</title>
+  </head>
+
+  <!-- 
+When building html and structure. Please keep in mind:
+   1. Organize your html in correct sections and order!!
+   2. Use semantic tags for everything possible
+   3. Use tailwindcss classes. If using custom class append class name with _
+-->
+
+  <body>
+    <!-- Advertisement -->
+    <div
+      role="banner"
+      aria-roledescription="advertisement banner for new user"
+      class="bg-purple-500 p-1 font-bold text-center text-[70%] text-white"
+    >
+      <p>50/50 sale!!! 50% off first order of any service 50$ or more</p>
+    </div>
+
+    <!-- Navigation and Header -->
+    <header
+      class="bg-purple-100 sticky top-0 right-0 left-0 flex justify-center"
+    >
+      <!--  -->
+      <nav class="w-full max-w-[700px]">
+        <ul class="flex justify-evenly items-center w-full">
+          <li
+            class="w-full text-center hover:bg-purple-300 hover:text-white duration-200"
+            ><a href="#" class="py-2 block">Home</a></li
+          >
+          <li
+            class="w-full text-center hover:bg-purple-300 hover:text-white duration-200"
+            ><a href="#" class="py-2 block">Services</a></li
+          >
+          <li
+            class="w-full text-center hover:bg-purple-300 hover:text-white duration-200"
+            ><a href="#" class="py-2 block">Pricing</a></li
+          >
+          <li
+            class="w-full text-center hover:bg-purple-300 hover:text-white duration-200"
+            ><a href="#" class="py-2 block">About</a></li
+          >
+          <li
+            class="w-full text-center hover:bg-purple-300 hover:text-white duration-200"
+            ><a href="#" class="py-2 block">Contact</a></li
+          >
+        </ul>
+      </nav>
+      <div
+        aria-roledescription="layout container"
+        role="none"
+        class="hidden md:flex justify-end items-center flex-grow max-w-[200px] pr-5"
+        ><i class="fa-solid fa-message"></i
+        ><i class="fa-solid fa-magnifying-glass"></i
+      ></div>
+    </header>
+
+    <!-- App is split into section tags -->
+
+    <!-- First section introduces business -->
+    <section class="relative min-h-screen">
+      <img
+        src="/public/assets/group-of-dogs.png"
+        alt="group of dogs next to each other looking cute"
+        class="w-full"
+      />
+    </section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+
+    <!-- Footer content -->
+    <footer></footer>
+  </body>
+</html>
