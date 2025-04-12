@@ -1,17 +1,17 @@
-import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import { FaFacebook, FaInstagram, FaSearch } from "react-icons/fa";
 import { PiPawPrintFill } from "react-icons/pi";
 
-import DogBeingWashed from "./assets/images/dog-getting-washed.png";
-import GroupOfDogs from "./assets/images/group-of-dogs.png";
 import Logo from "./assets/images/logo-trans-hor.png";
+import Hero from "./components/Hero";
 import Nav from "./components/Nav";
+import Section1 from "./components/Section1";
 
 const App = () => {
   const [showNav, setShowNav] = useState(false);
 
   return (
-    <main className="md:px-10 lg:px-20 xl:px-40 overflow-x-clip">
+    <main className="overflow-x-clip">
       {/* Advertisement div */}
       <div
         aria-roledescription="advertisement"
@@ -23,39 +23,31 @@ const App = () => {
         </p>
       </div>
 
-      <header className="flex justify-between items-center sticky top-0 right-0 left-0 bg-purple-100 z-10">
+      <header className="flex justify-between items-center sticky top-0 right-0 left-0 bg-purple-100 z-10 shadow-sm">
         <img src={Logo} alt="shelly's pets awesome logo" className="h-14" />
+        <Nav showNav={showNav} setShowNav={setShowNav} />
         <button
-          className="p-5 hover:text-purple-500 duration-200"
+          className="p-5 hover:text-purple-500 duration-200 md:hidden"
           onClick={() => setShowNav((prev) => !prev)}
         >
           <PiPawPrintFill />
         </button>
+        <div className="hidden md:flex justify-center items-center flex-shrink mr-2">
+          <button className="p-2">
+            <FaSearch />
+          </button>
+          <button className="p-2">
+            <FaFacebook />
+          </button>
+          <button className="p-2">
+            <FaInstagram />
+          </button>
+        </div>
       </header>
-      <AnimatePresence>
-        {showNav ? <Nav setShowNav={setShowNav} /> : null}
-      </AnimatePresence>
 
-      <img src={GroupOfDogs} alt="dogs in a group" className="" />
+      <Hero />
 
-      <p className="py-10 px-5">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic rem
-        quisquam ducimus doloribus nihil ratione eaque, fugit quasi, alias
-        excepturi soluta eius. Modi dignissimos sed corrupti, quos animi facilis
-        reiciendis!
-      </p>
-
-      <p className="px-5 pb-10">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
-        exercitationem obcaecati illum autem accusamus sequi necessitatibus
-        dicta cupiditate aspernatur earum porro fuga saepe.
-      </p>
-
-      <button className="bg-purple-500 outline-1 outline-gray-200 text-white w-full font-bold hover:bg-purple-100 hover:text-black duration-200 p-5">
-        Services
-      </button>
-
-      <img src={DogBeingWashed} alt="Dog being washed" className="" />
+      <Section1 />
     </main>
   );
 };

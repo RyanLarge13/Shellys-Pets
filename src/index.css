@@ -1,1 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Special+Gothic+Condensed+One&display=swap");
 @import "tailwindcss";
+
+* {
+  font-family: "Special Gothic Condensed One";
+  letter-spacing: 0.5px;
+}
