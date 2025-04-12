@@ -6,6 +6,7 @@ import Logo from "./assets/images/logo-trans-hor.png";
 import Hero from "./components/Hero";
 import Nav from "./components/Nav";
 import Section1 from "./components/Section1";
+import Section2 from "./components/Section2";
 
 const App = () => {
   const [showNav, setShowNav] = useState(false);
@@ -48,6 +49,8 @@ const App = () => {
       <Hero />
 
       <Section1 />
+
+      <Section2 />
     </main>
   );
 };
