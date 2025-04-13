@@ -1,10 +1,11 @@
 import GroupOfDogs from "../assets/images/group-of-dogs.png";
 import HeartPaw from "../assets/images/heart-paw.svg";
-import Heart from "../assets/images/heart.svg";
+
+// import Heart from "../assets/images/heart.svg";
 
 const Hero = () => {
   return (
-    <section className="lg:flex justify-center items-center bg-purple-100">
+    <section className="lg:flex justify-center items-center bg-purple-100 pb-10">
       <img
         src={GroupOfDogs}
         alt="dogs in a group"
@@ -35,15 +36,15 @@ const Hero = () => {
               Buffalo locals!! You are only a few minutes away from giving your
               furry friend the attention and care that they deserve
             </p>
-            <img
+            {/* <img
               src={Heart}
               alt="Heart"
               className="absolute right-[-15px] bottom-[-25px]"
-            />
+            /> */}
           </div>
         </div>
 
-        <button className="bg-purple-500 outline-1 outline-gray-200 text-white w-full font-bold hover:bg-purple-100 hover:text-black duration-200 p-5 lg:max-w-[300px] lg:mt-10">
+        <button className="bg-purple-500 flex mx-auto w-60  justify-center items-center outline-white outline-3 text-white font-bold hover:bg-purple-100 hover:text-black duration-200 p-5 lg:max-w-[300px] lg:mt-10">
           Services
         </button>
       </div>

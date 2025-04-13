@@ -4,7 +4,7 @@ import DogBeingWashed from "../assets/images/dog-getting-washed.png";
 
 const Section1 = () => {
   return (
-    <section className="lg:flex lg:flex-row-reverse lg:min-h-screen lg:p-40 relative">
+    <section className="lg:flex lg:flex-row-reverse lg:min-h-screen lg:p-40 relative min-h-screen">
       <div className="absolute w-[600px] h-[300px] lg:h-[600px] bg-purple-300 top-0 right-0 z-[-1]"></div>
       <div className="relative">
         <img
@@ -13,7 +13,7 @@ const Section1 = () => {
           className="max-h-[500px] aspect-square rounded-md shadow-md"
         />
         <div className="h-40 w-3 rounded-full bg-purple-500 absolute left-0 top-[50%] translate-x-[-50%]"></div>
-        <div className="bg-purple-100 p-5 absolute right-10 left-10 bottom-[-20px] rounded-md shadow-md max-w-[400px]">
+        <div className="bg-purple-100 p-5 absolute right-10 left-10 bottom-10 rounded-md shadow-md max-w-[400px]">
           <p>Wash, Comb, Pet, Love</p>
         </div>
       </div>
