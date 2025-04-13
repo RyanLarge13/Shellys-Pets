@@ -4,7 +4,7 @@ import GroomerTools from "../assets/images/groomer-tools.png";
 
 const Section2 = () => {
   return (
-    <section className="md:px-20 lg:px-40 bg-white text-center md:pb-20">
+    <section className="md:px-20 lg:px-40 bg-white text-center md:pb-40">
       <p>What Do We Do</p>
       <p className="text-3xl mb-20 mt-5">The Best Care For Our Best Friends</p>
       <div className="flex flex-col md:flex-row justify-evenly items-center">

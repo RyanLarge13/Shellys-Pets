@@ -27,7 +27,7 @@ const Hero = () => {
             <img
               src={HeartPaw}
               alt="Paw and heart"
-              className="absolute top-[-30px] left-[-20px]"
+              className="absolute top-[-30px] left-[-20px] scale-[0.9]"
             />
           </div>
 
