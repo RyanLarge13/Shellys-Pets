@@ -44,7 +44,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <button className="bg-purple-500 flex mx-auto w-60  justify-center items-center outline-white outline-3 text-white font-bold hover:bg-purple-100 hover:text-black duration-200 p-5 lg:max-w-[300px] lg:mt-10">
+        <button className="bg-purple-500 flex mx-auto w-full max-w-[85%] justify-center items-center outline-black outline-3 text-white font-bold hover:bg-purple-100 hover:text-black duration-200 p-5 lg:max-w-[300px] lg:mt-10">
           Services
         </button>
       </div>

@@ -1,54 +1,83 @@
-# React + TypeScript + Vite
+# Shelly's Pets
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Shelly's Pets** is a beautiful and responsive landing page for a local dog grooming business based in Buffalo, NY. This site showcases the services offered, builds trust with potential clients, and provides a simple contact form to get in touch — all built with **React**, **Vite**, and **Tailwind CSS**.
 
-Currently, two official plugins are available:
+<img src="./public/Screen-Shot.png" alt="screen-shot" />
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- Responsive, mobile-friendly layout
+- Clean and modern design
+- Simple contact form powered by [EmailJS](https://www.emailjs.com/)
+- Built with fast and modern tools
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tech Stack
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- **React** – Component-based frontend framework
+- **Vite** – Lightning-fast development environment
+- **Tailwind CSS** – Utility-first styling
+- **EmailJS** – Send email directly from the frontend
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v16 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/shellys-pets.git
+   cd shellys-pets
+   ```
+
+2. Install Deps
+
+```
+npm install
+# or
+yarn install
+
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+3. Create an .env file in the root with your EmailJS credentials:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
 ```
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_USER_ID=your_user_id
+
+```
+
+4. Start the dev server
+
+```
+npm run dev
+```
+
+## Deployment
+
+You can deploy this site with platforms like Vercel, Netlify, or any static hosting provider. Run:
+
+```
+npm run build
+```
+
+Then upload the contents of the dist folder to your host.
+
+## Contact
+
+Feel free to reach out if you have questions or suggestions:
+
+Website: shellyspets.com
+
+Email: info@shellyspets.com
+
+## License
+
+This project is open source and available under the MIT License
+
+See License [LICENSE](./LICENSE)

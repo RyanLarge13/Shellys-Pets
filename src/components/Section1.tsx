@@ -13,9 +13,6 @@ const Section1 = () => {
           className="max-h-[500px] aspect-square rounded-md shadow-md"
         />
         <div className="h-40 w-3 rounded-full bg-purple-500 absolute left-0 top-[50%] translate-x-[-50%]"></div>
-        <div className="bg-purple-100 p-5 absolute right-10 left-10 bottom-50 rounded-md shadow-md max-w-[400px]">
-          <p>Wash, Comb, Pet, Love</p>
-        </div>
       </div>
 
       <div className="flex-1 p-10">
@@ -43,7 +40,7 @@ const Section1 = () => {
             <p>Local Business</p>
           </li>
         </ul>
-        <button className="bg-purple-500 flex w-60  justify-center items-center outline-black outline-3 text-white font-bold hover:bg-purple-100 hover:text-black duration-200 p-5 lg:max-w-[300px] lg:mt-10">
+        <button className="bg-purple-500 flex mt-10 w-full justify-center items-center outline-black outline-3 text-white font-bold hover:bg-purple-100 hover:text-black duration-200 p-5 lg:max-w-[300px] lg:mt-10">
           Get In Touch
         </button>
       </div>

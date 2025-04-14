@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <section className="min-h-[50vh] bg-purple-100 md:px-20 lg:px-40 xl:px-60">
       <div className="border-b p-5 border-b-white lg:flex justify-between items-center gap-x-40">
-        <div className="flex-1 p-10">
+        <div className="flex-1 p-5">
           <h2 className="font-bold text-4xl mt-3 text-purple-500">
             Shelly's Pets
           </h2>
@@ -31,7 +31,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-10 p-10 flex-1">
+        <div className="mt-10 p-5 flex-1">
           <div>
             <h3 className="font-bold text-2xl mt-3 text-purple-400">
               Useful Links
@@ -79,10 +79,12 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="p-5">
-        <p className="text-xs">Copyright @Shelly's Pets, All Rights Reserved</p>
+      <div className="p-10">
+        <p className="text-xs text-center">
+          Copyright @Shelly's Pets, All Rights Reserved
+        </p>
         <div>
-          <ul className="flex gap-x-5 mt-10">
+          <ul className="flex gap-x-5 mt-5 justify-center items-center">
             <li>
               <a href="#">Terms & Conditions</a>
             </li>
