@@ -1,3 +1,5 @@
+import {FormEvent} from "react"
+
 const Contact = () => {
   
   const handleSendEmail = (e:FormEvent<HTMLFormElement>) => {

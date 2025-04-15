@@ -1,8 +1,9 @@
+import {FormEvent} from "react"
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   const handleSubscribe = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+    e.preventDefault();
   };
 
   return (
