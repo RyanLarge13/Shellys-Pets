@@ -4,7 +4,10 @@ import DogBeingWashed from "../assets/images/dog-getting-washed.png";
 
 const Section1 = () => {
   return (
-    <section id="about"  className="lg:flex lg:flex-row-reverse lg:min-h-screen lg:p-40 relative min-h-screen">
+    <section
+      id="about"
+      className="lg:flex lg:flex-row-reverse lg:min-h-screen lg:p-40 relative min-h-screen"
+    >
       <div className="absolute w-[600px] h-[300px] lg:h-[600px] bg-purple-300 top-0 right-0 z-[-1]"></div>
       <div className="relative">
         <img
@@ -21,10 +24,7 @@ const Section1 = () => {
           About Shelly's Pets
         </h2>
         <p className="max-w-[500px]">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
-          doloribus ducimus harum? Id, aliquid doloremque veniam magnam eligendi
-          minima repellendus dicta velit dolorum accusamus unde nostrum
-          consectetur sit, dolorem est!
+          
         </p>
         <ul className="mt-3">
           <li className="flex justify-start items-center">
@@ -40,7 +40,10 @@ const Section1 = () => {
             <p>Local Business</p>
           </li>
         </ul>
-        <a href="contact" className="bg-purple-500 flex mt-10 w-full justify-center items-center outline-black outline-3 text-white font-bold hover:bg-purple-100 hover:text-black duration-200 p-5 lg:max-w-[300px] lg:mt-10">
+        <a
+          href="#contact"
+          className="bg-purple-500 flex mt-10 w-full justify-center items-center outline-black outline-3 text-white font-bold hover:bg-purple-100 hover:text-black duration-200 p-5 lg:max-w-[300px] lg:mt-10"
+        >
           Get In Touch
         </a>
       </div>

@@ -50,7 +50,7 @@ const Hero = () => {
                 </div>
 
                 <a
-                    href="services"
+                    href="#services"
                     className="bg-purple-500 flex mx-auto w-full max-w-[85%] justify-center items-center outline-black outline-3 text-white font-bold hover:bg-purple-100 hover:text-black duration-200 p-5 lg:max-w-[300px] lg:mt-10"
                 >
                     Services
