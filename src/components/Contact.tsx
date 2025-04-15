@@ -1,6 +1,6 @@
 const Contact = () => {
   
-  const handleSendEmail = (e) => {
+  const handleSendEmail = (e:FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   }
   
