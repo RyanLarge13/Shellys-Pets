@@ -6,7 +6,7 @@ import DogsAtPark from "../assets/images/dogs-at-park.png";
 
 const Section4 = () => {
   return (
-    <section id="#news" className="py-20 bg-purple-100">
+    <section id="news" className="py-20 bg-purple-100">
       <p className="text-center">FROM THE BLOG</p>
       <h2 className="font-bold text-4xl text-center mt-3 text-purple-500">
         News & Articles

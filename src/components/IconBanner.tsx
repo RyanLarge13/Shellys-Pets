@@ -30,7 +30,7 @@ const IconBanner = () => {
     <section className="bg-purple-300 p-10 overflow-hidden flex justify-start items-center">
       <div
         style={{ transform: `translateX(${translation}px)` }}
-        className="min-w-full flex justify-evenly duration-500 items-center gap-x-10"
+        className="min-w-full flex justify-evenly ease-linear duration-[500ms] items-center gap-x-10"
       >
         <img src={Bugulug} alt="logo" className="h-[30px] opacity-50" />
         <img src={NylaFood} alt="logo" className="h-[30px] opacity-50" />
@@ -40,7 +40,7 @@ const IconBanner = () => {
       </div>
       <div
         style={{ transform: `translateX(${translation}px)` }}
-        className="min-w-full flex justify-evenly duration-500 items-center gap-x-10"
+        className="min-w-full flex justify-evenly ease-linear duration-[500ms] items-center gap-x-10"
       >
         <img src={Bugulug} alt="logo" className="h-[30px] opacity-50" />
         <img src={NylaFood} alt="logo" className="h-[30px] opacity-50" />
