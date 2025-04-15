@@ -2,7 +2,7 @@ import Person from "../assets/images/person.svg";
 
 const Section3 = () => {
   return (
-    <section className="bg-purple-100 py-20 min-h-screen p-5 flex justify-center items-center flex-col">
+    <section id="#testimonials" className="bg-purple-100 py-20 min-h-screen p-5 flex justify-center items-center flex-col">
       <p className="text-center">OUR TESTIMONIALS</p>
       <h2 className="font-bold text-4xl text-center mt-3 text-purple-500">
         What They're Talking About

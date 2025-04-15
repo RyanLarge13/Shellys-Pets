@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useState } from "react";
+import { useState } from "react";
 import { FaFacebook, FaInstagram, FaSearch } from "react-icons/fa";
 import { PiPawPrintFill } from "react-icons/pi";
 

@@ -1,6 +1,10 @@
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
+  const handleSubscribe = (e) => {
+    e.preventDefault()
+  };
+
   return (
     <section className="min-h-[50vh] bg-purple-100 md:px-20 lg:px-40 xl:px-60">
       <div className="border-b p-5 border-b-white lg:flex justify-between items-center gap-x-40">
@@ -38,16 +42,16 @@ const Footer = () => {
             </h3>
             <ul>
               <li>
-                <a href="#">Articles</a>
+                <a href="#news">Latest News</a>
               </li>
               <li>
-                <a href="#">Services</a>
+                <a href="#services">Services</a>
               </li>
               <li>
-                <a href="#">Contacts</a>
+                <a href="#contact">Contacts</a>
               </li>
               <li>
-                <a href="#">About</a>
+                <a href="#about">About</a>
               </li>
             </ul>
           </div>
@@ -60,7 +64,7 @@ const Footer = () => {
               ones
             </p>
             <form
-              action=""
+              onSubmit={handleSubscribe}
               className="rounded-full outline-none focus:outline-white focus:outline-3 shadow-sm my-2 w-full bg-purple-300 flex justify-between"
             >
               <input
@@ -86,10 +90,10 @@ const Footer = () => {
         <div>
           <ul className="flex gap-x-5 mt-5 justify-center items-center">
             <li>
-              <a href="#">Terms & Conditions</a>
+              <a href="/terms">Terms & Conditions</a>
             </li>
             <li>
-              <a href="#">Privacy Policy</a>
+              <a href="/policy">Privacy Policy</a>
             </li>
           </ul>
         </div>

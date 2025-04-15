@@ -4,7 +4,7 @@ import Logo from "../assets/images/logo-trans-vert.png";
 
 const Nav = ({
   showNav,
-  setShowNav,
+  setShowNav
 }: {
   showNav: boolean;
   setShowNav: Dispatch<SetStateAction<boolean>>;
@@ -20,7 +20,8 @@ const Nav = ({
       <ul className="flex flex-col justify-center items-center w-full md:flex-row">
         <li className="w-full text-center">
           <a
-            href="#"
+            href="#main"
+            onClick={() => setShowNav(false)}
             className="py-10 block hover:bg-purple-100 duration-200 w-full md:py-2 md:px-5 md:hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px]"
           >
             Home
@@ -28,23 +29,8 @@ const Nav = ({
         </li>
         <li className="w-full text-center">
           <a
-            href="#"
-            className="py-10 block hover:bg-purple-100 duration-200 w-full md:py-2 md:px-5 md:hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px]"
-          >
-            Services
-          </a>
-        </li>
-        <li className="w-full text-center">
-          <a
-            href="#"
-            className="py-10 block hover:bg-purple-100 duration-200 w-full md:py-2 md:px-5 md:hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px]"
-          >
-            Contact
-          </a>
-        </li>
-        <li className="w-full text-center">
-          <a
-            href="#"
+            href="#about"
+            onClick={() => setShowNav(false)}
             className="py-10 block hover:bg-purple-100 duration-200 w-full md:py-2 md:px-5 md:hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px]"
           >
             About
@@ -52,10 +38,38 @@ const Nav = ({
         </li>
         <li className="w-full text-center">
           <a
-            href="#"
+            href="#services"
+onClick={() => setShowNav(false)}
             className="py-10 block hover:bg-purple-100 duration-200 w-full md:py-2 md:px-5 md:hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px]"
           >
-            Pricing
+            Services
+          </a>
+        </li>
+        <li className="w-full text-center">
+          <a
+            href="#testimonials"
+onClick={() => setShowNav(false)}
+            className="py-10 block hover:bg-purple-100 duration-200 w-full md:py-2 md:px-5 md:hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px]"
+          >
+            Testimonials
+          </a>
+        </li>
+        <li className="w-full text-center">
+          <a
+            href="#news"
+onClick={() => setShowNav(false)}
+            className="py-10 block hover:bg-purple-100 duration-200 w-full md:py-2 md:px-5 md:hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px]"
+          >
+            Latest News
+          </a>
+        </li>
+        <li className="w-full text-center">
+          <a
+            href="#contact"
+onClick={() => setShowNav(false)}
+            className="py-10 block hover:bg-purple-100 duration-200 w-full md:py-2 md:px-5 md:hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px]"
+          >
+            Contact
           </a>
         </li>
       </ul>
