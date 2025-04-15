@@ -4,7 +4,7 @@ import Logo from "../assets/images/logo-trans-vert.png";
 
 const Nav = ({
   showNav,
-  setShowNav
+  setShowNav,
 }: {
   showNav: boolean;
   setShowNav: Dispatch<SetStateAction<boolean>>;
@@ -22,7 +22,7 @@ const Nav = ({
           <a
             href="#main"
             onClick={() => setShowNav(false)}
-            className="py-10 block hover:bg-purple-100 duration-200 w-full md:py-2 md:px-5 md:hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px]"
+            className="py-10 block duration-200 w-full md:py-2 md:px-5 hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px]"
           >
             Home
           </a>
@@ -31,7 +31,7 @@ const Nav = ({
           <a
             href="#about"
             onClick={() => setShowNav(false)}
-            className="py-10 block hover:bg-purple-100 duration-200 w-full md:py-2 md:px-5 md:hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px]"
+            className="py-10 block duration-200 w-full md:py-2 md:px-5 hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px]"
           >
             About
           </a>
@@ -39,8 +39,8 @@ const Nav = ({
         <li className="w-full text-center">
           <a
             href="#services"
-onClick={() => setShowNav(false)}
-            className="py-10 block hover:bg-purple-100 duration-200 w-full md:py-2 md:px-5 md:hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px]"
+            onClick={() => setShowNav(false)}
+            className="py-10 block duration-200 w-full md:py-2 md:px-5 hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px]"
           >
             Services
           </a>
@@ -48,8 +48,8 @@ onClick={() => setShowNav(false)}
         <li className="w-full text-center">
           <a
             href="#testimonials"
-onClick={() => setShowNav(false)}
-            className="py-10 block hover:bg-purple-100 duration-200 w-full md:py-2 md:px-5 md:hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px]"
+            onClick={() => setShowNav(false)}
+            className="py-10 block duration-200 w-full md:py-2 md:px-5 hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px]"
           >
             Testimonials
           </a>
@@ -57,8 +57,8 @@ onClick={() => setShowNav(false)}
         <li className="w-full text-center">
           <a
             href="#news"
-onClick={() => setShowNav(false)}
-            className="py-10 block hover:bg-purple-100 duration-200 w-full md:py-2 md:px-5 md:hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px]"
+            onClick={() => setShowNav(false)}
+            className="py-10 block duration-200 w-full md:py-2 md:px-5 hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px]"
           >
             Latest News
           </a>
@@ -66,8 +66,8 @@ onClick={() => setShowNav(false)}
         <li className="w-full text-center">
           <a
             href="#contact"
-onClick={() => setShowNav(false)}
-            className="py-10 block hover:bg-purple-100 duration-200 w-full md:py-2 md:px-5 md:hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px]"
+            onClick={() => setShowNav(false)}
+            className="py-10 block duration-200 w-full md:py-2 md:px-5 hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px]"
           >
             Contact
           </a>

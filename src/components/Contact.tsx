@@ -1,45 +1,60 @@
-import {FormEvent} from "react"
+import { FormEvent } from "react";
 
 const Contact = () => {
-  
-  const handleSendEmail = (e:FormEvent<HTMLFormElement>) => {
+  const handleSendEmail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-  }
-  
+  };
+
   return (
-    <section id="contact" className="px-5 pb-20 pt-60 md:px-20 lg:px-40 xl:px-60 lg:flex justify-between items-center">
+    <section
+      id="contact"
+      className="px-5 pb-20 pt-60 md:px-20 lg:px-40 xl:px-60 lg:flex justify-between items-center"
+    >
       <div>
         <p className="text-center lg:text-left">CONTACT NOW</p>
         <h2 className="font-bold text-4xl text-center lg:text-left mt-3 text-purple-500">
           GET IN TOUCH NOW
         </h2>
         <p className="text-center mt-5 max-w-[400px] mx-auto lg:text-left">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
-          excepturi quaerat quis eaque! Reprehenderit nostrum, nemo sunt nihil,
-          nam doloremque ut necessitatibus perspiciatis totam quo esse fuga eius
-          corporis fugit!
+          We’d love to hear from you! Whether you're looking to schedule a dog
+          walk, bath, or de-furing session, just drop us a message below. Our
+          team is here to help and will get back to you as soon as
+          possible—because your pup’s comfort is our priority! 🐾
         </p>
         <div className="mt-20">
-          <p className="font-semibold">PHONE</p>
-          <a href="tel:7162567922">716-256-7922</a>
+          <p className="font-semibold text-lg">PHONE</p>
+          <a
+            className="hover:text-purple-500 duration-200"
+            href="tel:7162567922"
+          >
+            716-256-7922
+          </a>
         </div>
-        <div className="mt-16">
-          <p className="font-semibold">EMAIL</p>
-          <a href="mailto:test.com">email</a>
+        <div className="mt-5">
+          <p className="font-semibold text-lg">EMAIL</p>
+          <a
+            className="hover:text-purple-500 duration-200"
+            href="mailto:test.com"
+          >
+            shellyspets@gaml.com
+          </a>
         </div>
-        <div className="mt-16">
-          <p className="font-semibold">ADDRESS</p>
-          <a href="https://www.google.com/maps/dir//177%20Wallace,%20Ave,%20Cheektowaga,%20NY%2014227%20">
+        <div className="mt-5">
+          <p className="font-semibold text-lg">ADDRESS</p>
+          <a
+            className="hover:text-purple-500 duration-200"
+            href="https://www.google.com/maps/dir//177%20Wallace,%20Ave,%20Cheektowaga,%20NY%2014227%20"
+          >
             177 Wallace Ave, Cheektowaga, NY 14227
           </a>
         </div>
         <div className="mt-16">
-          <p className="font-semibold">HOURS</p>P
-          <p className="mb-1 font-semibold">Mon - Fri</p>
-          <p className="mb-3">10am - 5pm</p>
-          <p className="mb-1 font-semibold">Saturday</p>
+          <p className="font-semibold text-lg">HOURS</p>
+          <p className="font-semibold mt-2">Mon - Fri</p>
+          <p className="">10am - 5pm</p>
+          <p className="font-semibold">Saturday</p>
           <p>12am - 4pm</p>
-          <p className="mb-1 font-semibold">Sunday</p>
+          <p className="font-semibold">Sunday</p>
           <p>Closed</p>
         </div>
       </div>

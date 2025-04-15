@@ -30,10 +30,12 @@ const App = () => {
       </div>
 
       <header className="flex justify-between items-center sticky top-0 right-0 left-0 bg-purple-100 z-10 shadow-sm">
-        <img src={Logo} alt="shelly's pets awesome logo" className="h-14" />
+        <a href="#main">
+          <img src={Logo} alt="shelly's pets awesome logo" className="h-14" />
+        </a>
         <Nav showNav={showNav} setShowNav={setShowNav} />
         <button
-          className="p-5 hover:text-purple-500 duration-200 md:hidden"
+          className="p-5 hover:text-purple-500 duration-200 md:hidden cursor-pointer"
           onClick={() => setShowNav((prev) => !prev)}
         >
           <PiPawPrintFill />

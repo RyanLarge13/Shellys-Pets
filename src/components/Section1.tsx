@@ -24,7 +24,12 @@ const Section1 = () => {
           About Shelly's Pets
         </h2>
         <p className="max-w-[500px]">
-          
+          At Shelly's Pets, we believe every dog deserves love and care—no
+          matter your budget. We proudly serve local families with affordable
+          dog walking, washing, and de-furing services, making it easy to keep
+          your furry friend happy and healthy. Whether it’s a quick stroll
+          around the block or a fresh scrub after a muddy day, our friendly team
+          is here to help without breaking the bank.
         </p>
         <ul className="mt-3">
           <li className="flex justify-start items-center">
