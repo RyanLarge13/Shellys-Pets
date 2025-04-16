@@ -11,7 +11,7 @@ const Nav = ({
 }) => {
   return (
     <nav
-      className={`fixed top-0 right-0 left-0 bottom-0 bg-white duration-200 z-10 py-20 flex flex-col justify-between items-center md:relative md:opacity-100 md:py-0 md:bg-transparent ${
+      className={`fixed top-0 right-0 left-0 bottom-0 bg-white duration-200 z-[999] py-20 flex flex-col justify-between items-center md:relative md:opacity-100 md:py-0 md:bg-transparent ${
         showNav
           ? "pointer-events-auto opacity-100"
           : "pointer-events-none opacity-0 md:pointer-events-auto md:opacity-100"
@@ -73,7 +73,10 @@ const Nav = ({
           </a>
         </li>
       </ul>
-      <button onClick={() => setShowNav(false)} className="md:hidden">
+      <button
+        onClick={() => setShowNav(false)}
+        className="md:hidden cursor-pointer"
+      >
         <img src={Logo} alt="Shelly's pets awesome logo" className="h-20" />
       </button>
     </nav>

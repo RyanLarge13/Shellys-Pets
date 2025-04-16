@@ -2,7 +2,7 @@ import { FaCheckCircle } from "react-icons/fa";
 
 import DogBeingWashed from "../assets/images/dog-getting-washed.png";
 
-const Section1 = () => {
+const About = () => {
   return (
     <section
       id="about"
@@ -56,4 +56,4 @@ const Section1 = () => {
   );
 };
 
-export default Section1;
+export default About;

@@ -8,7 +8,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="px-5 pb-20 pt-60 md:px-20 lg:px-40 xl:px-60 lg:flex justify-between items-center"
+      className="px-5 pb-20 pt-40 md:px-20 lg:px-40 xl:px-60 lg:flex justify-between items-center"
     >
       <div>
         <p className="text-center lg:text-left">CONTACT NOW</p>
@@ -82,7 +82,7 @@ const Contact = () => {
         ></textarea>
         <button
           type="submit"
-          className="rounded-md shadow-sm bg-purple-300 px-10 py-2"
+          className="rounded-md shadow-sm bg-purple-300 px-10 py-2 hover:bg-purple-100 duration-200 cursor-pointer"
         >
           SEND MESSAGE
         </button>

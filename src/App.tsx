@@ -3,15 +3,15 @@ import { FaFacebook, FaInstagram, FaSearch } from "react-icons/fa";
 import { PiPawPrintFill } from "react-icons/pi";
 
 import Logo from "./assets/images/logo-trans-hor.png";
+import About from "./components/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Gallery from "./components/Gallery";
 import Hero from "./components/Hero";
 import IconBanner from "./components/IconBanner";
 import Nav from "./components/Nav";
-import Section1 from "./components/Section1";
 import Section2 from "./components/Section2";
-import Section3 from "./components/Section3";
-import Section4 from "./components/Section4";
+import Testimonials from "./components/Testimonials";
 
 const App = () => {
   const [showNav, setShowNav] = useState(false);
@@ -55,15 +55,15 @@ const App = () => {
 
       <Hero />
 
-      <Section1 />
+      <About />
 
       <Section2 />
 
-      <Section3 />
+      <Testimonials />
 
       <IconBanner />
 
-      <Section4 />
+      <Gallery />
 
       <Contact />
 

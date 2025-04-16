@@ -3,7 +3,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Bugulug, Heiniger, LoviFood, NylaFood, TropiClean } from "../assets/logoBrands/logos.ts";
 
 const IconBanner = () => {
-  const [translation, setTranslation] = useState(0);
+  const [translation1, setTranslation1] = useState(0);
+  const [translation2, setTranslation2] = useState(0);
 
   const sliderRef1 = useRef(null);
   const sliderRef2 = useRef(null);
@@ -13,28 +14,38 @@ const IconBanner = () => {
       const elem1 = sliderRef1.current as HTMLElement;
       const elem2 = sliderRef2.current as HTMLElement;
 
-      if (elem1.getBoundingClientRect().right < -window.innerWidth) {
-        console.log("reset elem 1");
-        elem1.style.transition = "0ms linear";
-        elem1.style.transform = `translateX(0px)`;
-        elem1.style.transition = "500ms linear";
-        setTranslation(0);
+      const elem1Right = elem1.getBoundingClientRect().right;
+      const elem2Right = elem2.getBoundingClientRect().right;
+
+      if (elem1Right <= 0) {
+        elem1.style.transition = "none";
+        elem1.style.transform = `translateX(${0 + window.innerWidth}px)`;
+        setTranslation1(elem2.getBoundingClientRect().width);
+
+        // Wait until right before smooth animations are needed again before resetting
+        setTimeout(() => {
+          elem1.style.transition = "500ms linear";
+        }, 499);
       } else {
-        elem1.style.transform = `translateX(${translation}px)`;
+        elem1.style.transform = `translateX(${translation1}px)`;
       }
 
-      if (elem2.getBoundingClientRect().right < -window.innerWidth * 2) {
-        console.log("reset elem 2");
-        elem2.style.transition = "0ms linear";
+      if (elem2Right <= 0) {
+        elem2.style.transition = "none";
         elem2.style.transform = `translateX(0px)`;
-        elem2.style.transition = "500ms linear";
-        setTranslation(0);
+        setTranslation2(0);
+
+        // Wait until right before smooth animations are needed again before resetting
+        setTimeout(() => {
+          elem2.style.transition = "500ms linear";
+        }, 499);
       } else {
-        elem2.style.transform = `translateX(${translation}px)`;
+        elem2.style.transform = `translateX(${translation2}px)`;
       }
-      setTranslation((prev) => prev - 10);
+      setTranslation1((prev) => prev - 10);
+      setTranslation2((prev) => prev - 10);
     }
-  }, [translation]);
+  }, [translation1, translation2]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -42,13 +53,15 @@ const IconBanner = () => {
     }, 500);
 
     return () => clearInterval(interval);
-  }, [translation, trans]);
+  }, [translation1, translation2, trans]);
 
   return (
-    <section className="bg-purple-300 overflow-hidden flex justify-start items-center">
+    <section className="bg-purple-300 overflow-hidden flex justify-start items-center relative">
+      {/* Decorative element for fading icons in and out of view gently */}
+      <div className="icon-banner-side-shadow"></div>
       <div
         ref={sliderRef1}
-        className="p-10 duration-500 ease-linear min-w-full flex justify-evenly items-center gap-x-10"
+        className="min-w-max duration-500 ease-linear flex justify-start items-center gap-10 p-10"
       >
         <img src={Bugulug} alt="logo" className="h-[30px] opacity-50" />
         <img src={NylaFood} alt="logo" className="h-[30px] opacity-50" />
@@ -58,7 +71,7 @@ const IconBanner = () => {
       </div>
       <div
         ref={sliderRef2}
-        className="p-10 ml-50 duration-500 ease-linear min-w-full flex justify-evenly items-center gap-x-10"
+        className="duration-500 min-w-max ease-linear flex justify-start items-center gap-10 p-10 pl-0"
       >
         <img src={Bugulug} alt="logo" className="h-[30px] opacity-50" />
         <img src={NylaFood} alt="logo" className="h-[30px] opacity-50" />

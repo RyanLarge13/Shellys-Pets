@@ -1,4 +1,4 @@
-import {FormEvent} from "react"
+import { FormEvent } from "react";
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
@@ -21,16 +21,16 @@ const Footer = () => {
           </p>
           <hr />
           <div className="flex justify-start items-center gap-x-5 mt-3">
-            <button>
+            <button className="hover:text-purple-500 cursor-pointer duration-200">
               <FaFacebook />
             </button>
-            <button>
+            <button className="hover:text-purple-500 cursor-pointer duration-200">
               <FaInstagram />
             </button>
-            <button>
+            <button className="hover:text-purple-500 cursor-pointer duration-200">
               <FaYoutube />
             </button>
-            <button>
+            <button className="hover:text-purple-500 cursor-pointer duration-200">
               <FaTwitter />
             </button>
           </div>
@@ -43,16 +43,30 @@ const Footer = () => {
             </h3>
             <ul>
               <li>
-                <a href="#news">Latest News</a>
+                <a className="hover:text-purple-500 duration-200" href="#news">
+                  Gallery
+                </a>
               </li>
               <li>
-                <a href="#services">Services</a>
+                <a
+                  className="hover:text-purple-500 duration-200"
+                  href="#services"
+                >
+                  Services
+                </a>
               </li>
               <li>
-                <a href="#contact">Contacts</a>
+                <a
+                  className="hover:text-purple-500 duration-200"
+                  href="#contact"
+                >
+                  Contacts
+                </a>
               </li>
               <li>
-                <a href="#about">About</a>
+                <a className="hover:text-purple-500 duration-200" href="#about">
+                  About
+                </a>
               </li>
             </ul>
           </div>
@@ -75,7 +89,7 @@ const Footer = () => {
               />
               <button
                 type="submit"
-                className="rounded-full bg-purple-500 p-3 w-13 outline-white outline-2"
+                className="rounded-full bg-purple-500 p-3 w-13 outline-white outline-2 duration-200 hover:bg-purple-300 hover:outline-black cursor-pointer"
               >
                 Go
               </button>
