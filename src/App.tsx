@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import { FaFacebook, FaInstagram, FaSearch } from "react-icons/fa";
 import { PiPawPrintFill } from "react-icons/pi";
 
@@ -10,11 +10,43 @@ import Gallery from "./components/Gallery";
 import Hero from "./components/Hero";
 import IconBanner from "./components/IconBanner";
 import Nav from "./components/Nav";
-import Section2 from "./components/Section2";
+import Services from "./components/Services";
 import Testimonials from "./components/Testimonials";
+import searchableTerms from "./constants/searchableTerms";
 
 const App = () => {
   const [showNav, setShowNav] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
+  const [searchText, setSearchText] = useState("");
+
+  const findId = () => {
+    let href = "main";
+
+    searchableTerms.forEach((term) => {
+      term.texts.forEach((txt) => {
+        if (txt.includes(searchText.toLowerCase())) {
+          href = term.id;
+        }
+      });
+    });
+
+    return href;
+  };
+
+  const handleSearch = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const id = findId();
+
+    setSearchText("");
+
+    const elem = document.getElementById(id);
+
+    if (elem) {
+      elem.scrollIntoView({ behavior: "smooth" });
+      window.history.pushState(null, "", id);
+    }
+  };
 
   return (
     <main className="overflow-x-clip">
@@ -41,7 +73,18 @@ const App = () => {
           <PiPawPrintFill />
         </button>
         <div className="hidden md:flex justify-center items-center flex-shrink mr-2">
-          <button className="p-2">
+          {showSearch ? (
+            <form onSubmit={handleSearch}>
+              <input
+                type="text"
+                value={searchText}
+                className="rounded-md outline-none focus:outline-white focus:outline-3 bg-purple-300 py-2 px-4"
+                placeholder="Search"
+                onChange={(e) => setSearchText(e.target.value)}
+              />
+            </form>
+          ) : null}
+          <button className="p-2" onClick={() => setShowSearch(true)}>
             <FaSearch />
           </button>
           <button className="p-2">
@@ -57,7 +100,7 @@ const App = () => {
 
       <About />
 
-      <Section2 />
+      <Services />
 
       <Testimonials />
 

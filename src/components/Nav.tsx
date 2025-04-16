@@ -58,7 +58,7 @@ const Nav = ({
           <a
             href="#news"
             onClick={() => setShowNav(false)}
-            className="py-10 block duration-200 w-full md:py-2 md:px-5 hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px]"
+            className="py-10 block whitespace-nowrap duration-200 w-full md:py-2 md:px-5 hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px]"
           >
             Latest News
           </a>

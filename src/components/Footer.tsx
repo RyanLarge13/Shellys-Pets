@@ -14,10 +14,11 @@ const Footer = () => {
             Shelly's Pets
           </h2>
           <p className="mt-5 mb-2">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, iure
-            nemo voluptatem alias expedita corrupti esse accusantium placeat
-            dolore sequi, modi a voluptatibus porro labore ad adipisci nesciunt
-            vel. Fugiat.
+            At Shelly's Pets, we believe every pet deserves to feel pampered,
+            loved, and looked after with care. From gentle grooming to
+            wag-worthy washes, we treat your furry friends like family. Thank
+            you for trusting us to keep your pets happy, healthy, and looking
+            their best
           </p>
           <hr />
           <div className="flex justify-start items-center gap-x-5 mt-3">

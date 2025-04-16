@@ -28,6 +28,7 @@ const Testimonials = () => {
         {testimonials
           ? testimonials.map((t, i) => (
               <div
+                key={i}
                 style={{
                   transform: `translateX(-${100 * sliderIndex}%)`,
                   opacity: sliderIndex === i ? 1 : 0,
