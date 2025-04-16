@@ -1,4 +1,5 @@
 import { FormEvent, useState } from "react";
+import { CgClose } from "react-icons/cg";
 import { FaFacebook, FaInstagram, FaSearch } from "react-icons/fa";
 import { PiPawPrintFill } from "react-icons/pi";
 
@@ -18,6 +19,7 @@ const App = () => {
   const [showNav, setShowNav] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [searchText, setSearchText] = useState("");
+  const [indexOfNavigation, setIndexOfNavigation] = useState(0);
 
   const findId = () => {
     let href = "main";
@@ -65,7 +67,12 @@ const App = () => {
         <a href="#main">
           <img src={Logo} alt="shelly's pets awesome logo" className="h-14" />
         </a>
-        <Nav showNav={showNav} setShowNav={setShowNav} />
+        <Nav
+          showNav={showNav}
+          setShowNav={setShowNav}
+          indexOfNavigation={indexOfNavigation}
+          setIndexOfNavigation={setIndexOfNavigation}
+        />
         <button
           className="p-5 hover:text-purple-500 duration-200 md:hidden cursor-pointer"
           onClick={() => setShowNav((prev) => !prev)}
@@ -84,13 +91,16 @@ const App = () => {
               />
             </form>
           ) : null}
-          <button className="p-2" onClick={() => setShowSearch(true)}>
-            <FaSearch />
+          <button
+            className="p-2 hover:text-purple-500 cursor-pointer duration-200"
+            onClick={() => setShowSearch((prev) => !prev)}
+          >
+            {showSearch ? <CgClose /> : <FaSearch />}
           </button>
-          <button className="p-2">
+          <button className="p-2 hover:text-purple-500 cursor-pointer duration-200">
             <FaFacebook />
           </button>
-          <button className="p-2">
+          <button className="p-2 hover:text-purple-500 cursor-pointer duration-200">
             <FaInstagram />
           </button>
         </div>

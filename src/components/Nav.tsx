@@ -5,9 +5,13 @@ import Logo from "../assets/images/logo-trans-vert.png";
 const Nav = ({
   showNav,
   setShowNav,
+  indexOfNavigation,
+  setIndexOfNavigation,
 }: {
   showNav: boolean;
   setShowNav: Dispatch<SetStateAction<boolean>>;
+  indexOfNavigation: number;
+  setIndexOfNavigation: Dispatch<SetStateAction<number>>;
 }) => {
   return (
     <nav
@@ -21,8 +25,15 @@ const Nav = ({
         <li className="w-full text-center">
           <a
             href="#main"
-            onClick={() => setShowNav(false)}
-            className="py-10 block duration-200 w-full md:py-2 md:px-5 hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px]"
+            onClick={() => {
+              setIndexOfNavigation(0);
+              setShowNav(false);
+            }}
+            className={`${
+              indexOfNavigation === 0
+                ? "bg-purple-500 text-white translate-y-[10px]"
+                : ""
+            } py-10 block duration-200 w-full md:py-2 md:px-5 hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px]`}
           >
             Home
           </a>
@@ -30,8 +41,15 @@ const Nav = ({
         <li className="w-full text-center">
           <a
             href="#about"
-            onClick={() => setShowNav(false)}
-            className="py-10 block duration-200 w-full md:py-2 md:px-5 hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px]"
+            onClick={() => {
+              setIndexOfNavigation(1);
+              setShowNav(false);
+            }}
+            className={`${
+              indexOfNavigation === 1
+                ? "bg-purple-500 text-white translate-y-[10px]"
+                : ""
+            } py-10 block duration-200 w-full md:py-2 md:px-5 hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px]`}
           >
             About
           </a>
@@ -39,8 +57,15 @@ const Nav = ({
         <li className="w-full text-center">
           <a
             href="#services"
-            onClick={() => setShowNav(false)}
-            className="py-10 block duration-200 w-full md:py-2 md:px-5 hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px]"
+            onClick={() => {
+              setIndexOfNavigation(2);
+              setShowNav(false);
+            }}
+            className={`${
+              indexOfNavigation === 2
+                ? "bg-purple-500 text-white translate-y-[10px]"
+                : ""
+            } py-10 block duration-200 w-full md:py-2 md:px-5 hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px]`}
           >
             Services
           </a>
@@ -48,8 +73,15 @@ const Nav = ({
         <li className="w-full text-center">
           <a
             href="#testimonials"
-            onClick={() => setShowNav(false)}
-            className="py-10 block duration-200 w-full md:py-2 md:px-5 hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px]"
+            onClick={() => {
+              setIndexOfNavigation(3);
+              setShowNav(false);
+            }}
+            className={`${
+              indexOfNavigation === 3
+                ? "bg-purple-500 text-white translate-y-[10px]"
+                : ""
+            } py-10 block duration-200 w-full md:py-2 md:px-5 hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px]`}
           >
             Testimonials
           </a>
@@ -57,17 +89,31 @@ const Nav = ({
         <li className="w-full text-center">
           <a
             href="#news"
-            onClick={() => setShowNav(false)}
-            className="py-10 block whitespace-nowrap duration-200 w-full md:py-2 md:px-5 hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px]"
+            onClick={() => {
+              setIndexOfNavigation(4);
+              setShowNav(false);
+            }}
+            className={`${
+              indexOfNavigation === 4
+                ? "bg-purple-500 text-white translate-y-[10px]"
+                : ""
+            } py-10 block duration-200 w-full md:py-2 md:px-5 hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px] whitespace-nowrap`}
           >
-            Latest News
+            Gallery
           </a>
         </li>
         <li className="w-full text-center">
           <a
             href="#contact"
-            onClick={() => setShowNav(false)}
-            className="py-10 block duration-200 w-full md:py-2 md:px-5 hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px]"
+            onClick={() => {
+              setIndexOfNavigation(5);
+              setShowNav(false);
+            }}
+            className={`${
+              indexOfNavigation === 5
+                ? "bg-purple-500 text-white translate-y-[10px]"
+                : ""
+            } py-10 block duration-200 w-full md:py-2 md:px-5 hover:bg-purple-500 hover:text-white md:hover:translate-y-[10px]`}
           >
             Contact
           </a>

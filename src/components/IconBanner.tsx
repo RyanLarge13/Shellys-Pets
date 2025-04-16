@@ -61,7 +61,7 @@ const IconBanner = () => {
       <div className="icon-banner-side-shadow"></div>
       <div
         ref={sliderRef1}
-        className="min-w-max duration-500 ease-linear flex justify-start items-center gap-10 p-10"
+        className="w-max min-w-full duration-500 ease-linear flex justify-between items-center gap-10 p-10"
       >
         <img src={Bugulug} alt="logo" className="h-[30px] opacity-50" />
         <img src={NylaFood} alt="logo" className="h-[30px] opacity-50" />
@@ -71,7 +71,7 @@ const IconBanner = () => {
       </div>
       <div
         ref={sliderRef2}
-        className="duration-500 min-w-max ease-linear flex justify-start items-center gap-10 p-10 pl-0"
+        className="duration-500 w-max min-w-full ease-linear flex justify-between items-center gap-10 p-10"
       >
         <img src={Bugulug} alt="logo" className="h-[30px] opacity-50" />
         <img src={NylaFood} alt="logo" className="h-[30px] opacity-50" />
