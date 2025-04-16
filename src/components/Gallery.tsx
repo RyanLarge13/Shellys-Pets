@@ -14,7 +14,12 @@ const breakpointColumnsObj = {
 
 const Gallery = () => {
   return (
-    <section id="news" className="pt-20 bg-purple-100">
+    <section
+      id="gallery"
+      data-observer
+      data-index="4"
+      className="pt-20 bg-purple-100"
+    >
       <p className="text-center">FROM THE NEIGHBORHOOD</p>
       <h2 className="font-bold text-4xl text-center mt-3 text-purple-500 mb-40">
         Gallery

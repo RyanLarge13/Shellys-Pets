@@ -18,6 +18,8 @@ const Testimonials = () => {
   return (
     <section
       id="testimonials"
+      data-observer
+      data-index="3"
       className="bg-purple-100 py-20 min-h-screen p-5 flex justify-center items-center flex-col"
     >
       <p className="text-center">OUR TESTIMONIALS</p>
@@ -48,6 +50,7 @@ const Testimonials = () => {
       <div className="flex justify-center items-center mt-40 gap-x-1">
         {testimonials.map((_, i) => (
           <button
+            key={i}
             onClick={() => setSliderIndex(i)}
             className={`rounded-full shadow-md cursor-pointer ${
               i === sliderIndex

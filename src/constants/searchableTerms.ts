@@ -10,7 +10,7 @@ const searchableTerms = [
   },
   {
     texts: ["photos", "gallery", "images", "pictures", "pics"],
-    id: "news",
+    id: "gallery",
   },
   {
     texts: [

@@ -8,6 +8,8 @@ const Contact = () => {
   return (
     <section
       id="contact"
+      data-observer
+      data-index="5"
       className="px-5 pb-20 pt-40 md:px-20 lg:px-40 xl:px-60 lg:flex justify-between items-center"
     >
       <div>

@@ -6,6 +6,8 @@ const Services = () => {
   return (
     <section
       id="services"
+      data-observer
+      data-index="2"
       className="md:px-20 lg:px-40 bg-white text-center md:pb-40 mt-10"
     >
       <p>WHAT DO WE DO</p>

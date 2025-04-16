@@ -6,6 +6,8 @@ const About = () => {
   return (
     <section
       id="about"
+      data-observer
+      data-index="1"
       className="lg:flex lg:flex-row-reverse lg:min-h-screen lg:p-40 relative min-h-screen"
     >
       <div className="absolute w-[600px] h-[300px] lg:h-[600px] bg-purple-300 top-0 right-0 z-[-1]"></div>

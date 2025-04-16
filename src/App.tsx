@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useContext, useState } from "react";
 import { CgClose } from "react-icons/cg";
 import { FaFacebook, FaInstagram, FaSearch } from "react-icons/fa";
 import { PiPawPrintFill } from "react-icons/pi";
@@ -14,12 +14,27 @@ import Nav from "./components/Nav";
 import Services from "./components/Services";
 import Testimonials from "./components/Testimonials";
 import searchableTerms from "./constants/searchableTerms";
+import { NavContext } from "./context/NavContext";
+import { useIntersectionObserver } from "./hooks/intersectionObserver";
 
 const App = () => {
+  const { setIndexOfNavigation } = useContext(NavContext);
+
   const [showNav, setShowNav] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [searchText, setSearchText] = useState("");
-  const [indexOfNavigation, setIndexOfNavigation] = useState(0);
+
+  const handleNavId = (entry: IntersectionObserverEntry) => {
+    const section = entry.target as HTMLElement;
+    const index = parseInt(section.dataset.index || "0");
+
+    setIndexOfNavigation(index);
+  };
+
+  useIntersectionObserver(
+    (entry) => handleNavId(entry),
+    () => null
+  );
 
   const findId = () => {
     let href = "main";
@@ -67,12 +82,7 @@ const App = () => {
         <a href="#main">
           <img src={Logo} alt="shelly's pets awesome logo" className="h-14" />
         </a>
-        <Nav
-          showNav={showNav}
-          setShowNav={setShowNav}
-          indexOfNavigation={indexOfNavigation}
-          setIndexOfNavigation={setIndexOfNavigation}
-        />
+        <Nav showNav={showNav} setShowNav={setShowNav} />
         <button
           className="p-5 hover:text-purple-500 duration-200 md:hidden cursor-pointer"
           onClick={() => setShowNav((prev) => !prev)}
