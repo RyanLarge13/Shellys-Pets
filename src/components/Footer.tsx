@@ -1,5 +1,5 @@
 import { FormEvent } from "react";
-import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   const handleSubscribe = (e: FormEvent<HTMLFormElement>) => {
@@ -22,18 +22,13 @@ const Footer = () => {
           </p>
           <hr />
           <div className="flex justify-start items-center gap-x-5 mt-3">
-            <button className="hover:text-purple-500 cursor-pointer duration-200">
-              <FaFacebook />
-            </button>
-            <button className="hover:text-purple-500 cursor-pointer duration-200">
-              <FaInstagram />
-            </button>
-            <button className="hover:text-purple-500 cursor-pointer duration-200">
-              <FaYoutube />
-            </button>
-            <button className="hover:text-purple-500 cursor-pointer duration-200">
-              <FaTwitter />
-            </button>
+            <a
+              href="https://wa.me/message/3O2DQS4WSGV4H1"
+              target="_blank"
+              className="hover:text-purple-500 cursor-pointer duration-200 text-lg"
+            >
+              <FaWhatsapp />
+            </a>
           </div>
         </div>
 
@@ -61,7 +56,7 @@ const Footer = () => {
                   className="hover:text-purple-500 duration-200"
                   href="#contact"
                 >
-                  Contacts
+                  Contact
                 </a>
               </li>
               <li>

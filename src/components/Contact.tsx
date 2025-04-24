@@ -1,8 +1,54 @@
-import { FormEvent } from "react";
+import { FormEvent, useEffect, useState } from "react";
+import { FaWhatsapp } from "react-icons/fa";
+import { z } from "zod";
+
+const contactFormSchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters long"),
+  email: z.string().email("Invalid email address"),
+  phone: z.string().regex(/^\+?[1-9]\d{1,14}$/, "Invalid phone number"),
+  message: z.string().min(10, "Message must be at least 10 characters long"),
+});
 
 const Contact = () => {
+  const [name, setName] = useState("");
+  const [number, setNumber] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const [error, setError] = useState({
+    show: false,
+    message: "",
+  });
+
+  // Reset error with use effect automatically after 5 seconds of being shown
+  useEffect(() => {
+    if (error.show) {
+      setTimeout(() => {
+        setError({ show: false, message: "" });
+      }, 5000);
+    }
+  }, [error.show]);
+
+  const validate = () => {
+    const result = contactFormSchema.safeParse({
+      name: name,
+      email: email,
+      phone: number,
+      message: message,
+    });
+
+    if (!result.success) {
+      setError({ show: true, message: result.error.issues[0].message });
+      console.log(result.error.format());
+    } else {
+      console.log("✅ Valid data:", result.data);
+    }
+  };
+
   const handleSendEmail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    validate();
   };
 
   return (
@@ -12,6 +58,12 @@ const Contact = () => {
       data-index="5"
       className="px-5 pb-20 pt-40 md:px-20 lg:px-40 xl:px-60 lg:flex justify-between items-center"
     >
+      {/* Error from invalid for data */}
+      {error.show ? (
+        <div className="fixed bottom-10 z-[999] left-10 p-3 rounded-md bg-rose-100 shadow-md backdrop-blur-md bg-opacity-20 max-w-[400px]">
+          <p>{error.message}</p>
+        </div>
+      ) : null}
       <div>
         <p className="text-center lg:text-left">CONTACT NOW</p>
         <h2 className="font-bold text-4xl text-center lg:text-left mt-3 text-purple-500">
@@ -33,12 +85,22 @@ const Contact = () => {
           </a>
         </div>
         <div className="mt-5">
+          <p className="font-semibold text-lg">WHATSAPP</p>
+          <a
+            className="hover:text-purple-500 duration-200 flex justify-start items-center gap-x-2"
+            href="https://wa.me/message/3O2DQS4WSGV4H1"
+          >
+            Shelly's Pet Services WhatsApp
+            <FaWhatsapp />
+          </a>
+        </div>
+        <div className="mt-5">
           <p className="font-semibold text-lg">EMAIL</p>
           <a
             className="hover:text-purple-500 duration-200"
             href="mailto:test.com"
           >
-            shellyspets@gaml.com
+            shellyshope4you@yahoo.com
           </a>
         </div>
         <div className="mt-5">
@@ -63,22 +125,30 @@ const Contact = () => {
       <form onSubmit={handleSendEmail} className="mt-16">
         <input
           type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
           className="rounded-md outline-none focus:outline-white focus:outline-3 py-3 px-4 shadow-sm my-2 w-full bg-purple-100"
           placeholder="Your Name"
         />
         <input
           type="text"
+          value={number}
+          onChange={(e) => setNumber(e.target.value)}
           className="rounded-md outline-none focus:outline-white focus:outline-3 py-3 px-4 shadow-sm my-2 w-full bg-purple-100"
           placeholder="Phone Number"
         />
         <input
           type="text"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           className="rounded-md outline-none focus:outline-white focus:outline-3 py-3 px-4 shadow-sm my-2 w-full bg-purple-100"
           placeholder="Email Address"
         />
         <textarea
           name=""
           id=""
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
           className="rounded-md outline-none focus:outline-white focus:outline-3 py-3 px-4 shadow-sm my-2 w-full aspect-square max-h-100 bg-purple-100"
           placeholder="Your Message"
         ></textarea>

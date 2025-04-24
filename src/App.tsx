@@ -1,6 +1,6 @@
 import { FormEvent, useContext, useState } from "react";
 import { CgClose } from "react-icons/cg";
-import { FaFacebook, FaInstagram, FaSearch } from "react-icons/fa";
+import { FaSearch, FaWhatsapp } from "react-icons/fa";
 import { PiPawPrintFill } from "react-icons/pi";
 
 import Logo from "./assets/images/logo-trans-hor.png";
@@ -9,10 +9,10 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Gallery from "./components/Gallery";
 import Hero from "./components/Hero";
-import IconBanner from "./components/IconBanner";
+// import IconBanner from "./components/IconBanner";
 import Nav from "./components/Nav";
 import Services from "./components/Services";
-import Testimonials from "./components/Testimonials";
+// import Testimonials from "./components/Testimonials";
 import searchableTerms from "./constants/searchableTerms";
 import { NavContext } from "./context/NavContext";
 import { useIntersectionObserver } from "./hooks/intersectionObserver";
@@ -107,12 +107,13 @@ const App = () => {
           >
             {showSearch ? <CgClose /> : <FaSearch />}
           </button>
-          <button className="p-2 hover:text-purple-500 cursor-pointer duration-200">
-            <FaFacebook />
-          </button>
-          <button className="p-2 hover:text-purple-500 cursor-pointer duration-200">
-            <FaInstagram />
-          </button>
+          <a
+            href="https://wa.me/message/3O2DQS4WSGV4H1"
+            target="_blank"
+            className="hover:text-purple-500 cursor-pointer duration-200 block p-2"
+          >
+            <FaWhatsapp />
+          </a>
         </div>
       </header>
 
@@ -122,9 +123,9 @@ const App = () => {
 
       <Services />
 
-      <Testimonials />
+      {/* <Testimonials /> */}
 
-      <IconBanner />
+      {/* <IconBanner /> */}
 
       <Gallery />
 
