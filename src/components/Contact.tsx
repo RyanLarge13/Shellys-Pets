@@ -15,6 +15,8 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
+  const [dynamicWidth, setDynamicWidth] = useState(window.innerWidth);
+
   const [error, setError] = useState({
     show: false,
     message: "",
@@ -28,6 +30,17 @@ const Contact = () => {
       }, 5000);
     }
   }, [error.show]);
+
+  // On resize make sure the iframe google map can adjust and be dynamic
+  useEffect(() => {
+    const changeWidth = () => {
+      setDynamicWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", changeWidth);
+
+    return () => window.removeEventListener("resize", changeWidth);
+  }, [dynamicWidth]);
 
   const validate = () => {
     const result = contactFormSchema.safeParse({
@@ -111,6 +124,17 @@ const Contact = () => {
           >
             177 Wallace Ave, Cheektowaga, NY 14227
           </a>
+        </div>
+        <div className="mt-5">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5845.380640130157!2d-78.7778593!3d42.900480099999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d30cf109ef67bb%3A0xae96c7a2d43964aa!2s177%20Wallace%20Ave%2C%20Cheektowaga%2C%20NY%2014227!5e0!3m2!1sen!2sus!4v1745861480241!5m2!1sen!2sus"
+            width={dynamicWidth - 50}
+            height={dynamicWidth}
+            style={{ border: 0, maxWidth: 400 }}
+            // allowfullscreen={true}
+            loading="lazy"
+            // referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
         <div className="mt-16">
           <p className="font-semibold text-lg">HOURS</p>
