@@ -42,7 +42,7 @@ const Contact = () => {
     return () => window.removeEventListener("resize", changeWidth);
   }, [dynamicWidth]);
 
-  const validate = () => {
+  const validate = (): boolean => {
     const result = contactFormSchema.safeParse({
       name: name,
       email: email,
@@ -53,15 +53,42 @@ const Contact = () => {
     if (!result.success) {
       setError({ show: true, message: result.error.issues[0].message });
       console.log(result.error.format());
+      return false;
     } else {
       console.log("✅ Valid data:", result.data);
+      return true;
     }
   };
 
-  const handleSendEmail = (e: FormEvent<HTMLFormElement>) => {
+  const handleSendEmail = async (
+    e: FormEvent<HTMLFormElement>
+  ): Promise<void> => {
     e.preventDefault();
 
-    validate();
+    if (!validate()) {
+      return;
+    }
+
+    const formData = {
+      from: email,
+      to: "ryanhudsonlarge13@gmail.com",
+      businessName: "Shelly's Pets",
+      logoUrl:
+        "email-provider-production.up.railway.app/static/shellys-pets.png",
+      message: message,
+      number: number,
+      name: name,
+    };
+
+    const response = await fetch("http://localhost:8080/send-email/clients", {
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    console.log(response);
   };
 
   return (
