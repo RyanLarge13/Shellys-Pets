@@ -6,7 +6,7 @@ const contactFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters long"),
   email: z.string().email("Invalid email address"),
   phone: z.string().regex(/^\+?[1-9]\d{1,14}$/, "Invalid phone number"),
-  message: z.string().min(10, "Message must be at least 10 characters long"),
+  message: z.string().min(10, "Message must be at least 10 characters long")
 });
 
 const Contact = () => {
@@ -19,7 +19,7 @@ const Contact = () => {
 
   const [error, setError] = useState({
     show: false,
-    message: "",
+    message: ""
   });
 
   // Reset error with use effect automatically after 5 seconds of being shown
@@ -47,7 +47,7 @@ const Contact = () => {
       name: name,
       email: email,
       phone: number,
-      message: message,
+      message: message
     });
 
     if (!result.success) {
@@ -77,15 +77,15 @@ const Contact = () => {
         "email-provider-production.up.railway.app/static/shellys-pets.png",
       message: message,
       number: number,
-      name: name,
+      name: name
     };
 
-    const response = await fetch("http://localhost:8080/send-email/clients", {
+    const response = await fetch("https://email-provider-production.up.railway.app/send-email/clients", {
       method: "POST",
       body: JSON.stringify(formData),
       headers: {
-        "Content-Type": "application/json",
-      },
+        "Content-Type": "application/json"
+      }
     });
 
     console.log(response);
@@ -177,21 +177,21 @@ const Contact = () => {
         <input
           type="text"
           value={name}
-          onChange={(e) => setName(e.target.value)}
+          onChange={e => setName(e.target.value)}
           className="rounded-md outline-none focus:outline-white focus:outline-3 py-3 px-4 shadow-sm my-2 w-full bg-purple-100"
           placeholder="Your Name"
         />
         <input
           type="text"
           value={number}
-          onChange={(e) => setNumber(e.target.value)}
+          onChange={e => setNumber(e.target.value)}
           className="rounded-md outline-none focus:outline-white focus:outline-3 py-3 px-4 shadow-sm my-2 w-full bg-purple-100"
           placeholder="Phone Number"
         />
         <input
           type="text"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={e => setEmail(e.target.value)}
           className="rounded-md outline-none focus:outline-white focus:outline-3 py-3 px-4 shadow-sm my-2 w-full bg-purple-100"
           placeholder="Email Address"
         />
@@ -199,7 +199,7 @@ const Contact = () => {
           name=""
           id=""
           value={message}
-          onChange={(e) => setMessage(e.target.value)}
+          onChange={e => setMessage(e.target.value)}
           className="rounded-md outline-none focus:outline-white focus:outline-3 py-3 px-4 shadow-sm my-2 w-full aspect-square max-h-100 bg-purple-100"
           placeholder="Your Message"
         ></textarea>
