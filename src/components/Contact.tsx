@@ -14,6 +14,7 @@ const Contact = () => {
   const [number, setNumber] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [disabled, setDisabled] = useState(false);
 
   const [dynamicWidth, setDynamicWidth] = useState(window.innerWidth);
 
@@ -69,9 +70,11 @@ const Contact = () => {
       return;
     }
 
+    setDisabled(true);
+
     const formData = {
       from: email,
-      to: "ryanhudsonlarge13@gmail.com",
+      to: "shellyshope4you@yahoo.com",
       businessName: "Shelly's Pets",
       logoUrl:
         "email-provider-production.up.railway.app/static/shellys-pets.png",
@@ -80,15 +83,28 @@ const Contact = () => {
       name: name
     };
 
-    const response = await fetch("https://email-provider-production.up.railway.app/send-email/clients", {
-      method: "POST",
-      body: JSON.stringify(formData),
-      headers: {
-        "Content-Type": "application/json"
-      }
-    });
-
-    console.log(response);
+    try {
+      const response = await fetch(
+        "https://email-provider-production.up.railway.app/send-email/clients",
+        {
+          method: "POST",
+          body: JSON.stringify(formData),
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      );
+      setError({show: true,message: "Your message was successfully sent and I will reach out to you as soon as possible!"})
+      console.log(response);
+    } catch (err) {
+      console.log(err);
+      setError({
+        show: true,
+        message:
+          "We are terribly sorry but your message could not be sent at this time. Please try again later"
+      });
+      setDisabled(false);
+    }
   };
 
   return (
@@ -138,7 +154,7 @@ const Contact = () => {
           <p className="font-semibold text-lg">EMAIL</p>
           <a
             className="hover:text-purple-500 duration-200"
-            href="mailto:test.com"
+            href="mailto:shellyshope4you@yahoo.com"
           >
             shellyshope4you@yahoo.com
           </a>
@@ -205,6 +221,7 @@ const Contact = () => {
         ></textarea>
         <button
           type="submit"
+          disabled={disabled}
           className="rounded-md shadow-sm bg-purple-300 px-10 py-2 hover:bg-purple-100 duration-200 cursor-pointer"
         >
           SEND MESSAGE
